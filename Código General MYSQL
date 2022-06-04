@@ -1,0 +1,256 @@
+ import mysql.connector
+
+cnn = mysql.connector.connect(host="localhost", user="root", passwd="admin", database="sistemadeinformacion", port = "3306")
+
+cur = cnn.cursor()
+cur.execute("SELECT * FROM `sistemadeinformacion`.`tabla asignaturas` ")
+datos = cur.fetchall()
+
+for fila in datos:
+    print(fila)
+
+print(cnn)
+
+create database Sistema_mejorado;
+-- creacion y cargue de estudiantes
+use Sistema_mejorado;
+CREATE TABLE Alumnos (Documento_Alumno int primary key not null, NombresE varchar(70),Fecha_nacE datetime,
+GeneroE varchar(1), Grupo_sangineoE varchar(3),DireccionE varchar(100),telefonoE int,Correo_elecE varchar(90), 
+Carrera varchar(50));
+INSERT INTO Alumnos VALUES (100003418 ,"sebastian cifuentes" , "2003-03-18" , "m" ,  "O+" , "carrera 2b este #90-20sur" , 324483664 ,
+ "Sebastianstivenc@gmail.com" , "ingenieria en sistemas");
+INSERT INTO Alumnos VALUES (100293011 ,"marcos rodriguez" , "2000-05-28" , "m" ,  "a+" , "carrera 10 #9-50sur" , 313320348 ,
+ "marcosrodriguez@gmail.com" , "ingenieria industrial"); 
+INSERT INTO Alumnos VALUES (79034213 ,"felipe marin" , "1994-12-18" , "m" ,  "b+" , "diagonal 5# 48-43" , 347288374 ,
+ "felipemari45.com" , "diseño de modas");
+INSERT INTO Alumnos VALUES (123451344 ,"andres camilo" , "1998-07-2" , "m" ,  "O-" , "avenida carracas #89 -23 sur" , 37389273 ,
+ "andrescamilo@gmail.com" , "ingenieria en sistemas");
+INSERT INTO Alumnos VALUES (23453566 ,"laura diaz" , "2001-04-12" , "f" ,  "b+" , "calle 2 #30 -45 sur" , 30848293 ,
+ "laura diaz@gmail.com" , "diseño de modas");
+INSERT INTO Alumnos VALUES (92781782 ,"maria rosario" , "1991-04-5" , "f" ,  "b-" , "diagonal 10 #12 -72" , 373459273 ,
+ "mariarosario@gmail.com" , "ingenieria en sistemas");
+INSERT INTO Alumnos VALUES (2377622 ,"alba sanchez" , "1993-01-2" , "f" ,  "a+" , "avenida carracas #89 -23 sur" , 323424452 ,
+ "alba sanchez@gmail.com" , "ingenieria industrial");
+INSERT INTO Alumnos VALUES (91945920 ,"María Valencia","1953-05-11", "f", "o+", "trasversal # 4 carrera 2b este", 339756329,
+ "mariavalencia@gmail.com" , "medicina");
+INSERT INTO Alumnos VALUES (99003175 ,"franco Álvarez", "1993-2-6", "m", "a+", "calle #6 -2b sur este",305554812 ,
+ "francoalvarez@gmail.com" , "Derecho");
+INSERT INTO Alumnos VALUES (91005990 ,"patricia Wilches", "1952-09-12", "f",  "a-", "avenida carracas #76-23 sur",322762297
+ ,"patriciawilches@gmail.com", "Derecho");
+INSERT INTO Alumnos VALUES (146862243 ,"Mauricio Martínez","1987-01-7", "m","o-","avenida carracas #09-78 sur" , 38391028, 
+ "maurimartinez@gmail.com","ingeniería civil");
+INSERT INTO Alumnos VALUES (9202076 ,"alba Villanueva","1977-10-11" , "f","a+" ,"avenida carracas #89 -23 sur", 309428452 ,
+ "albavillanueva@gmail.com","ingeniería informatica");
+INSERT INTO Alumnos VALUES (4762917 ,"Valentina puentes","1984-11-4", "f","a+" , "avenida carracas #89 -23 sur", 377424452 ,
+ "valepuentes@gmail.com" , "derecho");
+INSERT INTO Alumnos VALUES (7618973 ,"jeyson peña" ,"1963-08-12", "m","o+" , "calle #89 -23 sur este", 323424476 ,
+ "Jeysonpeña@gmail.com","ingeneria química");
+INSERT INTO Alumnos VALUES (1092837 ,"antonio colorado", "1993-3-7", "m","a+", "avenida #76- 09 occidente", 312618952 ,
+ "antoniocolorado@gmail.com" , "marketing digital");
+INSERT INTO Alumnos VALUES (6159273 ,"Jhuged Alfonso", "1963-09-5", "m", "o+", "avenida #89 -23 Oriente" , 327168023 ,
+ "jhugedalfonso@gmail.com" , "Derecho");
+INSERT INTO Alumnos VALUES (20091837 , "Brisnyy Espitia" , "1966-2-8" , "f","a+" , "calle #19 -43 sur este", 345671890 ,
+ "brisnyyespitia@gmail.com" , "arquitectura");
+INSERT INTO Alumnos VALUES ( 61578932 ,"brandon morales" , "1993-09-2","m","a+" , "avenida #20 -23 sur", 381710837,
+ "brandomorales@gmail.com" , "enfermeria");
+INSERT INTO Alumnos VALUES (8677622 ,"Brayan Gil", "1988-8-3" , "m" ,"a+" , "avenida #24-78" , 320317632 ,
+ "brayangil@gmail.com" , "administracion de empresas");
+INSERT INTO Alumnos VALUES (88947283 ,"Camilo Ordóñez" , "1953-9-9" , "m" ,  "o+" , "avenida  #19 -43 este" , 348108272 ,
+ "camiloordonéz@gmail.com" , "ingenieria en sistemas");
+INSERT INTO Alumnos VALUES (95454652 ," Ricardo Useche" , "1993-2-10" , "m" ,  "a+" , "calle #17-23 sur" , 381928281 ,
+ "usechericardo@gmail.com" , "derecho");
+ 
+ -- creacion y cargue de Profesores
+CREATE TABLE Profesores (Documento_maestro int primary key not null, NombresP varchar(70),Fecha_nacP datetime,
+GeneroP varchar(1), Grupo_sangineoP varchar(3),DireccionP varchar(100),telefonoP int,Correo_elecP varchar(90));
+INSERT INTO Profesores VALUES (123456789 ,"hector soto" , "1978-09-22" , "m" ,  "o+" , "calle 80 norte #21 -46" , 323456473 ,
+ "hectorSoto@gmail.com" );
+ INSERT INTO Profesores VALUES (76893762 ,"maria fernandez" , "1965-12-7" , "f" ,  "a+" , "calle 105 este #78 -16" , 320434573 ,
+ "mariafernandez@gmail.com" ); 
+ INSERT INTO Profesores VALUES (94534244 ,"carla lopez" , "1988-10-1" , "f" ,  "o+" , "carrera 20 norte #23 -41sur" , 323456471 ,
+ "carlalopez@gmail.com" );
+ INSERT INTO Profesores VALUES (72341141 ,"Flor alvarez" , "1975-10-1" , "f" ,  "o+" , "calle 93 sur # 84 - 48 este" , 323746243 ,
+ "floralvarez@gmail.com" );
+ INSERT INTO Profesores VALUES (98264815 ,"tomas vanegas" ,"1993-06-17" ,"m" ,"ab+" ,"carrera 40 este #3 -61sur" , 313443645 ,
+ "tomasvanegas@gmail.com" );
+ INSERT INTO Profesores VALUES (88423815 ,"maria torres" , "1979-01-11" , "f" ,  "b+" , "carrera 32 bis #90 -15",312645241 ,
+ "mariastorres@gmail.com" );
+ INSERT INTO Profesores VALUES (70234534 ,"yeray duarte", "1981-07-27" , "m" , "a-" ,"diagonal 40 #104 -90" ,311345692 ,
+ "yerayduarte@gmail.com" );
+ INSERT INTO Profesores VALUES (94562675 ,"marco solis" , "1969-11-30" , "m" , "o-" ,"calle 64 bis #27 -74 este", 345692746 ,
+ "marcosolis@gmail.com" );
+ INSERT INTO Profesores VALUES (85934534 ,"paco perez" , "1991-01-1" , "m" ,  "ab-" , "diagonal 47 #78 -61" ,316694692 ,
+ "pacoperez@gmail.com" );
+ 
+ -- creacion y cargue de asignaturas
+CREATE TABLE Asignaturas (Codigo_Asignatura int primary key not null, Nombre_asignatura varchar(70)not null,
+ semestre int not null, salon varchar(2) not null, Documento_maestros int not null); 
+ ALTER TABLE Asignaturas add CONSTRAINT Documento_maestros FOREIGN KEY (Documento_maestros) REFERENCES Profesores
+ (Documento_maestro) ON DELETE CASCADE ON UPDATE CASCADE; 
+ INSERT INTO Asignaturas VALUES (101,"fundamentos matemáticos",1, "A1", 85934534 );
+ INSERT INTO Asignaturas VALUES (102,"base de datos",2,"A2",123456789);
+INSERT INTO Asignaturas VALUES (103,"programacion pc",2, "A3",123456789);
+INSERT INTO Asignaturas VALUES (104,"fundamentos medicina",3, "A4",70234534);
+INSERT INTO Asignaturas VALUES (105,"economia",2, "A5",76893762); 
+INSERT INTO Asignaturas VALUES (106,"estadistica",1, "A6",85934534); 
+INSERT INTO Asignaturas VALUES (107,"arquitectura pc",1,"A7",85934534); 
+INSERT INTO Asignaturas VALUES (108,"pice",3, "A8",88423815); 
+INSERT INTO Asignaturas VALUES (109,"introduccion a la administracion",1, "A9",94534244); 
+INSERT INTO Asignaturas VALUES (110,"derecho administractivo general",3, "B1",94562675); 
+INSERT INTO Asignaturas VALUES (111,"ingles",3, "B2",98264815);
+INSERT INTO Asignaturas VALUES (112,"electiva",4,"B3",70234534);
+INSERT INTO Asignaturas VALUES (113,"etica profesional",4, "B4",98264815);
+INSERT INTO Asignaturas VALUES (114,"calculo",4, "B5",85934534);
+
+-- creacion y cargue de notas
+CREATE TABLE Notas (Documento_Estudiantes int not null, Codigo_Asignaturas int not null, Nota_corte1 Float,
+Nota_corte2 Float,Nota_corte3 Float );
+ ALTER TABLE Notas add CONSTRAINT Documento_Estudiantes FOREIGN KEY (Documento_Estudiantes) REFERENCES Estudiantes
+ (Documento_Estudiante) ON DELETE CASCADE ON UPDATE CASCADE; 
+ ALTER TABLE Notas add CONSTRAINT Codigo_Asignaturas FOREIGN KEY (Codigo_Asignaturas) REFERENCES Asignaturas
+ (Codigo_Asignatura) ON DELETE CASCADE ON UPDATE CASCADE; 
+
+INSERT INTO Notas VALUES (100003418 ,101, 4.5, 3.4, 4.9 );
+
+create database Sistema_mejorado;
+-- creacion y cargue de estudiantes
+use Sistema_mejorado;
+CREATE TABLE Estudiantes (Documento_Estudiante int primary key not null, NombresE varchar(70),Fecha_nacE datetime,
+GeneroE varchar(1), Grupo_sangineoE varchar(3),DireccionE varchar(100),telefonoE int,Correo_elecE varchar(90), 
+Carrera varchar(50));
+INSERT INTO Estudiantes VALUES (100003418 ,"sebastian cifuentes" , "2003-03-18" , "m" ,  "O+" , "carrera 2b este #90-20sur" , 324483664 ,
+ "Sebastianstivenc@gmail.com" , "ingenieria en sistemas");
+INSERT INTO Estudiantes VALUES (100293011 ,"marcos rodriguez" , "2000-05-28" , "m" ,  "a+" , "carrera 10 #9-50sur" , 313320348 ,
+ "marcosrodriguez@gmail.com" , "ingenieria industrial"); 
+INSERT INTO Estudiantes VALUES (79034213 ,"felipe marin" , "1994-12-18" , "m" ,  "b+" , "diagonal 5# 48-43" , 347288374 ,
+ "felipemari45.com" , "diseño de modas");
+INSERT INTO Estudiantes VALUES (123451344 ,"andres camilo" , "1998-07-2" , "m" ,  "O-" , "avenida carracas #89 -23 sur" , 37389273 ,
+ "andrescamilo@gmail.com" , "ingenieria en sistemas");
+INSERT INTO Estudiantes VALUES (23453566 ,"laura diaz" , "2001-04-12" , "f" ,  "b+" , "calle 2 #30 -45 sur" , 30848293 ,
+ "laura diaz@gmail.com" , "diseño de modas");
+INSERT INTO Estudiantes VALUES (92781782 ,"maria rosario" , "1991-04-5" , "f" ,  "b-" , "diagonal 10 #12 -72" , 373459273 ,
+ "mariarosario@gmail.com" , "ingenieria en sistemas");
+INSERT INTO Estudiantes VALUES (2377622 ,"alba sanchez" , "1993-01-2" , "f" ,  "a+" , "avenida carracas #89 -23 sur" , 323424452 ,
+ "alba sanchez@gmail.com" , "ingenieria industrial");
+INSERT INTO Estudiantes VALUES (91945920 ,"María Valencia","1953-05-11", "f", "o+", "trasversal # 4 carrera 2b este", 339756329,
+ "mariavalencia@gmail.com" , "medicina");
+INSERT INTO Estudiantes VALUES (99003175 ,"franco Álvarez", "1993-2-6", "m", "a+", "calle #6 -2b sur este",305554812 ,
+ "francoalvarez@gmail.com" , "Derecho");
+INSERT INTO Estudiantes VALUES (91005990 ,"patricia Wilches", "1952-09-12", "f",  "a-", "avenida carracas #76-23 sur",322762297
+ ,"patriciawilches@gmail.com", "Derecho");
+INSERT INTO Estudiantes VALUES (146862243 ,"Mauricio Martínez","1987-01-7", "m","o-","avenida carracas #09-78 sur" , 38391028, 
+ "maurimartinez@gmail.com","ingeniería civil");
+INSERT INTO Estudiantes VALUES (9202076 ,"alba Villanueva","1977-10-11" , "f","a+" ,"avenida carracas #89 -23 sur", 309428452 ,
+ "albavillanueva@gmail.com","ingeniería informatica");
+INSERT INTO Estudiantes VALUES (4762917 ,"Valentina puentes","1984-11-4", "f","a+" , "avenida carracas #89 -23 sur", 377424452 ,
+ "valepuentes@gmail.com" , "derecho");
+INSERT INTO Estudiantes VALUES (7618973 ,"jeyson peña" ,"1963-08-12", "m","o+" , "calle #89 -23 sur este", 323424476 ,
+ "Jeysonpeña@gmail.com","ingeneria química");
+INSERT INTO Estudiantes VALUES (1092837 ,"antonio colorado", "1993-3-7", "m","a+", "avenida #76- 09 occidente", 312618952 ,
+ "antoniocolorado@gmail.com" , "marketing digital");
+INSERT INTO Estudiantes VALUES (6159273 ,"Jhuged Alfonso", "1963-09-5", "m", "o+", "avenida #89 -23 Oriente" , 327168023 ,
+ "jhugedalfonso@gmail.com" , "Derecho");
+INSERT INTO Estudiantes VALUES (20091837 , "Brisnyy Espitia" , "1966-2-8" , "f","a+" , "calle #19 -43 sur este", 345671890 ,
+ "brisnyyespitia@gmail.com" , "arquitectura");
+INSERT INTO Estudiantes VALUES ( 61578932 ,"brandon morales" , "1993-09-2","m","a+" , "avenida #20 -23 sur", 381710837,
+ "brandomorales@gmail.com" , "enfermeria");
+INSERT INTO Estudiantes VALUES (8677622 ,"Brayan Gil", "1988-8-3" , "m" ,"a+" , "avenida #24-78" , 320317632 ,
+ "brayangil@gmail.com" , "administracion de empresas");
+INSERT INTO Estudiantes VALUES (88947283 ,"Camilo Ordóñez" , "1953-9-9" , "m" ,  "o+" , "avenida  #19 -43 este" , 348108272 ,
+ "camiloordonéz@gmail.com" , "ingenieria en sistemas");
+INSERT INTO Estudiantes VALUES (95454652 ," Ricardo Useche" , "1993-2-10" , "m" ,  "a+" , "calle #17-23 sur" , 381928281 ,
+ "usechericardo@gmail.com" , "derecho");
+ 
+ -- creacion y cargue de Profesores
+CREATE TABLE Profesores (Documento_maestro int primary key not null, NombresP varchar(70),Fecha_nacP datetime,
+GeneroP varchar(1), Grupo_sangineoP varchar(3),DireccionP varchar(100),telefonoP int,Correo_elecP varchar(90));
+INSERT INTO Profesores VALUES (123456789 ,"hector soto" , "1978-09-22" , "m" ,  "o+" , "calle 80 norte #21 -46" , 323456473 ,
+ "hectorSoto@gmail.com" );
+ INSERT INTO Profesores VALUES (76893762 ,"maria fernandez" , "1965-12-7" , "f" ,  "a+" , "calle 105 este #78 -16" , 320434573 ,
+ "mariafernandez@gmail.com" ); 
+ INSERT INTO Profesores VALUES (94534244 ,"carla lopez" , "1988-10-1" , "f" ,  "o+" , "carrera 20 norte #23 -41sur" , 323456471 ,
+ "carlalopez@gmail.com" );
+ INSERT INTO Profesores VALUES (72341141 ,"Flor alvarez" , "1975-10-1" , "f" ,  "o+" , "calle 93 sur # 84 - 48 este" , 323746243 ,
+ "floralvarez@gmail.com" );
+ INSERT INTO Profesores VALUES (98264815 ,"tomas vanegas" ,"1993-06-17" ,"m" ,"ab+" ,"carrera 40 este #3 -61sur" , 313443645 ,
+ "tomasvanegas@gmail.com" );
+ INSERT INTO Profesores VALUES (88423815 ,"maria torres" , "1979-01-11" , "f" ,  "b+" , "carrera 32 bis #90 -15",312645241 ,
+ "mariastorres@gmail.com" );
+ INSERT INTO Profesores VALUES (70234534 ,"yeray duarte", "1981-07-27" , "m" , "a-" ,"diagonal 40 #104 -90" ,311345692 ,
+ "yerayduarte@gmail.com" );
+ INSERT INTO Profesores VALUES (94562675 ,"marco solis" , "1969-11-30" , "m" , "o-" ,"calle 64 bis #27 -74 este", 345692746 ,
+ "marcosolis@gmail.com" );
+ INSERT INTO Profesores VALUES (85934534 ,"paco perez" , "1991-01-1" , "m" ,  "ab-" , "diagonal 47 #78 -61" ,316694692 ,
+ "pacoperez@gmail.com" );
+ 
+ -- creacion y cargue de asignaturas
+CREATE TABLE Asignaturas (Codigo_Asignatura int primary key not null, Nombre_asignatura varchar(70)not null,
+ semestre int not null, salon varchar(2) not null, Documento_maestros int not null); 
+ ALTER TABLE Asignaturas add CONSTRAINT Documento_maestros FOREIGN KEY (Documento_maestros) REFERENCES Profesores
+ (Documento_maestro) ON DELETE CASCADE ON UPDATE CASCADE; 
+ INSERT INTO Asignaturas VALUES (101,"fundamentos matemáticos",1, "A1", 85934534 );
+ INSERT INTO Asignaturas VALUES (102,"base de datos",2,"A2",123456789);
+INSERT INTO Asignaturas VALUES (103,"programacion pc",2, "A3",123456789);
+INSERT INTO Asignaturas VALUES (104,"fundamentos medicina",3, "A4",70234534);
+INSERT INTO Asignaturas VALUES (105,"economia",2, "A5",76893762); 
+INSERT INTO Asignaturas VALUES (106,"estadistica",1, "A6",85934534); 
+INSERT INTO Asignaturas VALUES (107,"arquitectura pc",1,"A7",85934534); 
+INSERT INTO Asignaturas VALUES (108,"pice",3, "A8",88423815); 
+INSERT INTO Asignaturas VALUES (109,"introduccion a la administracion",1, "A9",94534244); 
+INSERT INTO Asignaturas VALUES (110,"derecho administractivo general",3, "B1",94562675); 
+INSERT INTO Asignaturas VALUES (111,"ingles",3, "B2",98264815);
+INSERT INTO Asignaturas VALUES (112,"electiva",4,"B3",70234534);
+INSERT INTO Asignaturas VALUES (113,"etica profesional",4, "B4",98264815);
+INSERT INTO Asignaturas VALUES (114,"calculo",4, "B5",85934534);
+
+-- creacion y cargue de notas
+CREATE TABLE Notas (Documento_Estudiantes int not null, Codigo_Asignaturas int not null, Nota_corte1 Float,
+Nota_corte2 Float,Nota_corte3 Float );
+ ALTER TABLE Notas add CONSTRAINT Documento_Estudiantes FOREIGN KEY (Documento_Estudiantes) REFERENCES Estudiantes
+ (Documento_Estudiante) ON DELETE CASCADE ON UPDATE CASCADE; 
+ ALTER TABLE Notas add CONSTRAINT Codigo_Asignaturas FOREIGN KEY (Codigo_Asignaturas) REFERENCES Asignaturas
+ (Codigo_Asignatura) ON DELETE CASCADE ON UPDATE CASCADE; 
+
+INSERT INTO Notas VALUES (100003418 ,101, 4.5, 3.4, 4.9 );
+
+from logging import root
+from tkinter import ttk
+from tkinter import * 
+
+class SistemadeInformacion:
+    def __init__(self root)
+        self.wind = root
+        self.wind.title(SistemadeInformacion)
+        self.wind.geometry("850x600")
+        self.wind.config(bg="teal")
+    
+    frame1 = LabelFrame(self.wind, text="Datos de los estudiantes", font=("calibri", 14))
+    frame2 = LabelFrame(self.wind, text="Informacion de los estudiantes", font=("calibri", 14))
+    
+    frame1.pack(fill= "both", expand="yes", padx=20, pady=15)
+    frame2.pack(fill= "both", expand="yes", padx=20, pady=15)
+    
+    lbl1 = Label(frame1, text="ID del estudiante", width=20)
+    lbl1.grid(row=0, column=1, padx=5, pady=3)
+    self,ent1 = Entry(frame1)
+    self.ent1.grid(row=1, column=1, padx=5, pady=3)
+    
+    lbl2 = Label(frame1, text="ID del estudiante", width=20)
+    lbl2.grid(row=0, column=1, padx=5, pady=3)
+    self,ent2 = Entry(frame1)
+    self.ent2.grid(row=1, column=1, padx=5, pady=3)
+    
+    lbl3 = Label(frame1, text="ID del estudiante", width=20)
+    lbl3.grid(row=0, column=1, padx=5, pady=3)
+    self,ent3 = Entry(frame1)
+    self.ent3.grid(row=1, column=1, padx=5, pady=3)
+    
+    lbl4 = Label(frame1, text="ID del estudiante", width=20)
+    lbl4.grid(row=0, column=1, padx=5, pady=3)
+    self,ent4 = Entry(frame1)
+    self.ent4.grid(row=1, column=1, padx=5, pady=3)
+    
+    if __name__=="__main__":
+            root=Tk()
+            Estudiante=Estudiante(root)
+            root.mainloop()
